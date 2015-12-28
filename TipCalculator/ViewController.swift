@@ -11,9 +11,9 @@ import UIKit
 class ViewController: UIViewController {
 
     var percentageTip : Float = 0.00
-    var currentTip : String = ""
-    var currentCost : String = ""
-    var currentTotal : String = ""
+    var currentTip : Float = 0.00
+    var currentCost : Float = 0.00
+    var currentTotal : Float = 0.00
     
     
     @IBOutlet weak var labelCost: UILabel!
@@ -31,37 +31,49 @@ class ViewController: UIViewController {
     }
 
     @IBAction func buttonOne(sender: UIButton) {
-        labelCost.text = "$1.00"
+        currentCost = currentCost * 10 + 0.01
+        let formatCost : String = String(format: "%0.2f", currentCost)
+        labelCost.text = "$\(formatCost)"
     }
     
     @IBAction func buttonTwo(sender: UIButton) {
+        currentCost = currentCost * 10 + 0.02
     }
 
     @IBAction func buttonThree(sender: UIButton) {
+        currentCost = currentCost * 10 + 0.03
     }
     
     @IBAction func buttonFour(sender: UIButton) {
+        currentCost = currentCost * 10 + 0.04
     }
     
     @IBAction func buttonFive(sender: UIButton) {
+        currentCost = currentCost * 10 + 0.05
     }
     
     @IBAction func buttonSix(sender: UIButton) {
+        currentCost = currentCost * 10 + 0.06
     }
     
     @IBAction func buttonSeven(sender: UIButton) {
+        currentCost = currentCost * 10 + 0.07
     }
     
     @IBAction func buttonEight(sender: UIButton) {
+        currentCost = currentCost * 10 + 0.08
     }
-    
-    @IBAction func buttonNie(sender: UIButton) {
+    @IBAction func buttonNine(sender: UIButton) {
+        
+        currentCost = currentCost * 10 + 0.09
     }
     
     @IBAction func buttonDecimal(sender: UIButton) {
     }
     
     @IBAction func buttonZero(sender: UIButton) {
+        
+        currentCost = currentCost * 10
     }
     
     @IBAction func buttonClear(sender: UIButton) {
@@ -84,9 +96,9 @@ class ViewController: UIViewController {
     func clearAll()
     {
         percentageTip = 0.00
-        currentTip = ""
-        currentCost = ""
-        currentTotal = ""
+        currentTip = 0.00
+        currentCost = 0.00
+        currentTotal = 0.00
         labelCost.text = "$0.00"
         labelTip.text = "$0.00"
         labelTotal.text = "$0.00"
