@@ -10,6 +10,12 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var percentageTip : Float = 0.00
+    var currentTip : String = ""
+    var currentCost : String = ""
+    var currentTotal : String = ""
+    
+    
     @IBOutlet weak var labelCost: UILabel!
     @IBOutlet weak var labelTip: UILabel!
     @IBOutlet weak var labelTotal: UILabel!
@@ -29,7 +35,6 @@ class ViewController: UIViewController {
     }
     
     @IBAction func buttonTwo(sender: UIButton) {
-        labelCost.text = "$2.00"
     }
 
     @IBAction func buttonThree(sender: UIButton) {
@@ -60,6 +65,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func buttonClear(sender: UIButton) {
+        clearAll()
     }
     
     @IBAction func button15P(sender: UIButton) {
@@ -74,5 +80,16 @@ class ViewController: UIViewController {
     @IBAction func buttonOtherP(sender: UIButton) {
     }
     
+    
+    func clearAll()
+    {
+        percentageTip = 0.00
+        currentTip = ""
+        currentCost = ""
+        currentTotal = ""
+        labelCost.text = "$0.00"
+        labelTip.text = "$0.00"
+        labelTotal.text = "$0.00"
+    }
 }
 
